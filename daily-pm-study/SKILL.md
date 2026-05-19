@@ -1,3 +1,8 @@
+---
+name: daily-pm-study
+description: "每日产品经理学习闭环。35–55 分钟覆盖 4 块：读 1 章必读书目（俞军/Mom Test/Inspired 等 8 本，~127 章 4 个月读完）+ PM 视角解读产品/AI 资讯 + Product Hunt 新品追踪 + 投资动向。维护学习进度、累计去重、输出 HTML 日报。触发词：今日 PM 学习 / 今日产品功课 / PM 学习 / daily pm study。"
+---
+
 # Daily PM Study · 每日产品经理学习
 
 > 一份 35–55 分钟可完成的每日产品经理输入闭环：读书 1 章 + 资讯 + 新品 + 投资动向。
