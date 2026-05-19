@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverwrite
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# 用户运行时数据（这些不该进仓库）
+**/progress.json
+**/seen_news.json
+**/pm-study/*.html
