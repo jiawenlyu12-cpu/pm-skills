@@ -33,7 +33,7 @@
 - **被动 surface**：聊产品话题时 1 句话点出当前 phase 风险（不噪音）
 - **状态文件位置**：`~/.claude/product-checkpoint/`（跨项目共享，不随仓库分发）
 
-📂 详细文档：[`product-checkpoint/SKILL.md`](product-checkpoint/SKILL.md) · 7-phase 详细问题库：[`product-checkpoint/references/phases.md`](product-checkpoint/references/phases.md)
+📂 详细文档：[`product-checkpoint/SKILL.md`](product-checkpoint/SKILL.md) · 7-phase 详细问题库：[`product-checkpoint/references/phases.md`](product-checkpoint/references/phases.md) · 埋点设计原则（P4 / P6 必读）：[`product-checkpoint/references/telemetry.md`](product-checkpoint/references/telemetry.md)
 
 ---
 
@@ -94,7 +94,8 @@ pm-skills/
 ├── product-checkpoint/
 │   ├── SKILL.md                    # 7-phase 流程入口 + 触发词
 │   └── references/
-│       └── phases.md               # 每个 phase 的 self-check 问题库 + gotchas
+│       ├── phases.md               # 每个 phase 的 self-check 问题库 + gotchas
+│       └── telemetry.md            # 埋点设计原则（5W1H / 客户端 vs 服务端 / event sourcing）
 ├── README.md                       # 本文件
 └── LICENSE                         # MIT
 ```

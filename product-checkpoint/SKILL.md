@@ -82,6 +82,7 @@ surface 方式：**1 句话** + 给出主动触发词。不要把整个清单塞
 ## 7 个 Phase（用户的产品方法论）
 
 > 详细 self-check 问题在 `references/phases.md`。Skill 启动时按需 read 那个文件。
+> 埋点设计原则（P4 telemetry / P6 调优循环的核心方法论）在 `references/telemetry.md`。
 
 | # | Phase | 一句话 | 核心产出物 |
 |---|---|---|---|

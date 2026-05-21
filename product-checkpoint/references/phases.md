@@ -106,9 +106,14 @@
 
 **Goal**：把 prompt 包成能用的东西，**day 0 必须有 telemetry**。
 
+> 埋点设计原则、客户端 vs 服务端、event sourcing 等核心概念见 [`telemetry.md`](./telemetry.md)。
+
 **Outputs**：
 - [ ] 能跑的 MVP（极简前端 OK）
 - [ ] Telemetry：每次输入/输出/token/延迟/feedback log
+- [ ] AI 产品 generation 事件必带 `prompt_version` + `model_version`（详见 telemetry.md）
+- [ ] 关键业务事件埋在服务端（不是客户端，详见 telemetry.md "可信度差异"）
+- [ ] events 表 append-only，状态字段从事件序列推导（详见 telemetry.md "event sourcing"）
 - [ ] Prompt cache 启用（中文用户特别重要，省 80% 系统 prompt 钱）
 - [ ] 模型选型决策记录（why this model）
 
