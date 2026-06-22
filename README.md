@@ -37,6 +37,23 @@
 
 ---
 
+### 🧪 web-qa · 像测试工程师一样自动测你的 Web 产品
+
+给一个 URL（线上或本地 dev server），AI 用真实浏览器（Playwright）把产品**自动测一遍**，输出结构化 Bug 报告 + 能不能上线的判定。
+
+- **真实驱动浏览器**：点击 / 填表 / 切分辨率，像真实用户那样操作，不是只生成清单
+- **抓人眼看不到的错**：自动捕获 console 报错和 4xx/5xx 网络失败请求
+- **方法论内置**：用例设计走等价类 + 边界值 + 错误猜测；缺陷按 Severity × Priority 定级
+- **10 大类覆盖清单**：功能 / 表单校验 / 导航 / 鉴权越权 / 错误处理 / 响应式 / 可访问性 / 性能 / 文案
+- **三档**：Quick（核心+高危）/ Standard（+中）/ Exhaustive（含 a11y / 性能 / 外观）
+- **输出**：`qa-reports/qa-report-{日期}.md`（结论速览 + 缺陷清单含复现步骤+截图 + Ship 判定）
+- 默认**只测不改源码**；`reference/testing-knowledge.md` 同时是一份"测试岗在做什么"的学习资料
+- **依赖**：需要 Playwright MCP（驱动浏览器）
+
+📂 详细文档：[`web-qa/SKILL.md`](web-qa/SKILL.md) · 测试方法论知识库：[`web-qa/reference/testing-knowledge.md`](web-qa/reference/testing-knowledge.md) · Web 覆盖清单：[`web-qa/reference/web-checklist.md`](web-qa/reference/web-checklist.md)
+
+---
+
 ## 安装方式
 
 ### 方式 A · 用 skills CLI（推荐）
@@ -45,6 +62,7 @@
 # 单装某一个
 npx skills add jiawenlyu12-cpu/pm-skills@daily-pm-study -g -y
 npx skills add jiawenlyu12-cpu/pm-skills@product-checkpoint -g -y
+npx skills add jiawenlyu12-cpu/pm-skills@web-qa -g -y
 ```
 
 `-g` 全局安装，`-y` 跳过确认。装完后在 Claude Code 里用各自的触发词即可。
@@ -56,6 +74,7 @@ git clone https://github.com/jiawenlyu12-cpu/pm-skills.git
 mkdir -p ~/.claude/skills
 cp -R pm-skills/daily-pm-study ~/.claude/skills/
 cp -R pm-skills/product-checkpoint ~/.claude/skills/
+cp -R pm-skills/web-qa ~/.claude/skills/
 ```
 
 下次新开 Claude Code 会话即可使用。
@@ -80,6 +99,12 @@ cp -R pm-skills/product-checkpoint ~/.claude/skills/
 - "产品库" / "所有产品" — 列总览
 - "推进到下一阶段" / "phase up"
 
+### web-qa
+- "测一下这个网站 \<url\>" / "QA 我的产品 \<url\>"
+- "帮我找 bug \<url\>"
+- "web qa" / "质量检查" / "上线前测试"
+- 可带档位：`--quick` / `--exhaustive`，或"只测某个流程/页面"
+
 ---
 
 ## 仓库结构
@@ -96,6 +121,13 @@ pm-skills/
 │   └── references/
 │       ├── phases.md               # 每个 phase 的 self-check 问题库 + gotchas
 │       └── telemetry.md            # 埋点设计原则（5W1H / 客户端 vs 服务端 / event sourcing）
+├── web-qa/
+│   ├── SKILL.md                    # QA 主流程（侦察→设计用例→执行→定级→出报告）
+│   ├── reference/
+│   │   ├── testing-knowledge.md    # 测试流程 / 用例设计技巧 / severity-priority 标准
+│   │   └── web-checklist.md        # Web 10 大类覆盖清单
+│   └── templates/
+│       └── bug-report.md           # 报告模板（Ship 判定 + 缺陷清单）
 ├── README.md                       # 本文件
 └── LICENSE                         # MIT
 ```
